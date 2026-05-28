@@ -1,0 +1,524 @@
+/* =====================================================
+   EcoBridge Kawempe - Main Stylesheet
+   Color Palette: #064929 (Dark Green), #4BBA5B (Eco Green), #FFFFFF (White)
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-dark: #064929;
+    --primary-light: #4BBA5B;
+    --text-white: #FFFFFF;
+    --text-dark: #333333;
+    --light-bg: #f0f9f7;
+    --transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Heuristica', 'Georgia', serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* =====================================================
+   Navigation Bar
+   ===================================================== */
+
+.navbar {
+    background: var(--primary-dark);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo a {
+    color: var(--text-white);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.nav-logo a:hover {
+    color: var(--primary-light);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text-white);
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 1rem;
+}
+
+.nav-link:hover {
+    color: var(--primary-light);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-white);
+    margin: 5px 0;
+    transition: var(--transition);
+}
+
+/* =====================================================
+   Hero Section
+   ===================================================== */
+
+.hero {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #0a5c38 100%);
+    color: var(--text-white);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 60px;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(75, 186, 91, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(75, 186, 91, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 1;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logo Container */
+.logo-container {
+    margin-bottom: 3rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.logo-icon {
+    width: 150px;
+    height: 150px;
+    max-width: 100%;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+}
+
+/* Hero Title */
+.hero-title {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: slideDown 0.8s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Tagline */
+.hero-tagline {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    color: var(--primary-light);
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.btn {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background: var(--primary-light);
+    color: var(--primary-dark);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(75, 186, 91, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-white);
+    border: 2px solid var(--primary-light);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-light);
+    color: var(--primary-dark);
+    transform: translateY(-3px);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+}
+
+.scroll-indicator span {
+    font-size: 2rem;
+    color: var(--primary-light);
+    display: block;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    50% {
+        transform: translateY(15px) translateX(-50%);
+    }
+}
+
+/* =====================================================
+   About Section
+   ===================================================== */
+
+.about {
+    padding: 5rem 2rem;
+    background: var(--light-bg);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about h2,
+.mission h2,
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--primary-dark);
+    text-align: center;
+}
+
+.about p {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* =====================================================
+   Mission Section
+   ===================================================== */
+
+.mission {
+    padding: 5rem 2rem;
+    background: var(--text-white);
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.mission-card {
+    background: var(--light-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: var(--transition);
+    border-left: 4px solid var(--primary-light);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.mission-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: var(--text-white);
+}
+
+.mission-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+.mission-card p {
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* =====================================================
+   Contact Section
+   ===================================================== */
+
+.contact {
+    padding: 5rem 2rem;
+    background: var(--primary-dark);
+    color: var(--text-white);
+    text-align: center;
+}
+
+.contact h2 {
+    color: var(--primary-light);
+}
+
+.contact > .container > p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--text-white);
+}
+
+.contact-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.contact-link {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: var(--primary-light);
+    color: var(--primary-dark);
+    text-decoration: none;
+    border-radius: 50px;
+    transition: var(--transition);
+    font-weight: bold;
+}
+
+.contact-link:hover {
+    background: var(--text-white);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* =====================================================
+   Footer
+   ===================================================== */
+
+.footer {
+    background: #032414;
+    color: var(--text-white);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-top: 3px solid var(--primary-light);
+}
+
+.footer-content p {
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.footer-credits {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--primary-light);
+    padding-top: 1.5rem;
+}
+
+.footer-credits strong {
+    color: var(--primary-light);
+}
+
+/* =====================================================
+   Responsive Design
+   ===================================================== */
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-tagline {
+        font-size: 1.2rem;
+    }
+
+    .logo-icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .about h2,
+    .mission h2,
+    .contact h2 {
+        font-size: 2rem;
+    }
+
+    .mission-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-link {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        margin-top: 50px;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-tagline {
+        font-size: 1rem;
+    }
+
+    .logo-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .nav-logo a {
+        font-size: 1.2rem;
+    }
+
+    .about,
+    .mission,
+    .contact {
+        padding: 3rem 1rem;
+    }
+}
+
+/* =====================================================
+   Animations & Effects
+   ===================================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .scroll-indicator,
+    .cta-buttons {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+}
