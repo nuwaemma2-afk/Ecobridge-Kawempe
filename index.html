@@ -3,10 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Ecobridge-Kawempe</title>
+    <meta name="description" content="EcoBridge Kawempe - Bridging Communities to a Sustainable Future">
+    <meta name="theme-color" content="#064929">
+    <title>EcoBridge Kawempe - Bridging Communities to a Sustainable Future</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://www.fontsquirrel.com/fonts/heuristica" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <h1>Ecobridge-Kawempe</h1>
-    <p>Congratulations! Your GitHub Pages site is live. Edit this index.html to add your content.</p>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">EcoBridge Kawempe</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#mission" class="nav-link">Mission</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Logo -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <!-- Logo Container -->
+            <div class="logo-container">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Globe with leaf -->
+                    <defs>
+                        <style>
+                            .globe-grid { stroke: #064929; stroke-width: 2; fill: none; }
+                            .globe-fill { fill: #4BBA5B; }
+                            .leaf { fill: #064929; }
+                        </style>
+                    </defs>
+                    
+                    <!-- Globe segments -->
+                    <circle class="globe-fill" cx="100" cy="100" r="70" opacity="0.3"/>
+                    <circle class="globe-grid" cx="100" cy="100" r="70"/>
+                    
+                    <!-- Vertical lines -->
+                    <line class="globe-grid" x1="100" y1="30" x2="100" y2="170"/>
+                    <line class="globe-grid" x1="65" y1="35" x2="65" y2="165"/>
+                    <line class="globe-grid" x1="135" y1="35" x2="135" y2="165"/>
+                    
+                    <!-- Horizontal lines -->
+                    <line class="globe-grid" x1="30" y1="100" x2="170" y2="100"/>
+                    <line class="globe-grid" x1="35" y1="65" x2="165" y2="65"/>
+                    <line class="globe-grid" x1="35" y1="135" x2="165" y2="135"/>
+                    
+                    <!-- Leaf -->
+                    <g class="leaf" transform="translate(85, 85)">
+                        <path d="M 20 0 Q 30 10 30 25 Q 30 40 20 45 Q 10 40 10 25 Q 10 10 20 0" fill="#4BBA5B"/>
+                        <line x1="20" y1="0" x2="20" y2="45" stroke="#064929" stroke-width="1.5"/>
+                    </g>
+                </svg>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="hero-title">EcoBridge-Kawempe</h1>
+            
+            <!-- Tagline -->
+            <p class="hero-tagline">"Bridging Communities to a Sustainable Future"</p>
+            
+            <!-- CTA Buttons -->
+            <div class="cta-buttons">
+                <button class="btn btn-primary">Learn More</button>
+                <button class="btn btn-secondary">Get Involved</button>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <span>↓</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About EcoBridge Kawempe</h2>
+            <p>
+                EcoBridge Kawempe is a community-driven initiative dedicated to creating sustainable solutions 
+                that bridge environmental conservation with community development. We believe in creating a 
+                positive impact through collaborative efforts and innovative environmental practices.
+            </p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" class="mission">
+        <div class="container">
+            <h2>Our Mission</h2>
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <h3>🌱 Sustainability</h3>
+                    <p>Promoting eco-friendly practices and environmental awareness</p>
+                </div>
+                <div class="mission-card">
+                    <h3>🤝 Community</h3>
+                    <p>Building strong connections within local communities</p>
+                </div>
+                <div class="mission-card">
+                    <h3>🌍 Global Impact</h3>
+                    <p>Creating ripple effects of positive change worldwide</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>Join us in bridging communities to a sustainable future</p>
+            <div class="contact-links">
+                <a href="#" class="contact-link">Email Us</a>
+                <a href="#" class="contact-link">Follow Us</a>
+                <a href="#" class="contact-link">Partner With Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 EcoBridge Kawempe. All rights reserved.</p>
+            <div class="footer-credits">
+                <p>
+                    <strong>Logo Design Credits:</strong><br>
+                    Font: Heuristica-Bold by Andrej Panov<br>
+                    Slogan Font: LindenHill-webfont.ttf<br>
+                    Colors: #064929 (Dark Green), #4BBA5B (Eco Green), #FFFFFF (White)
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
