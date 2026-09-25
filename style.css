@@ -100,7 +100,7 @@ body {
    ===================================================== */
 
 .hero {
-    background: linear-gradient(135deg, var(--primary-dark) 0%, #0a5c38 100%);
+    background-color: var(--primary-dark);
     color: var(--text-white);
     min-height: 100vh;
     display: flex;
@@ -111,6 +111,13 @@ body {
     overflow: hidden;
 }
 
+.hero-cover {
+    background-image: url('assets/images/ecobridge-team-cover.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .hero::before {
     content: '';
     position: absolute;
@@ -118,15 +125,18 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(75, 186, 91, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(75, 186, 91, 0.05) 0%, transparent 50%);
+    background:
+        linear-gradient(rgba(6, 73, 41, 0.66), rgba(6, 73, 41, 0.72)),
+        radial-gradient(circle at 20% 50%, rgba(75, 186, 91, 0.16) 0%, transparent 52%),
+        radial-gradient(circle at 80% 80%, rgba(75, 186, 91, 0.1) 0%, transparent 52%);
     pointer-events: none;
 }
 
 .hero-content {
     text-align: center;
     z-index: 1;
+    max-width: 900px;
+    padding: 2rem 1.5rem 4rem;
     animation: fadeInUp 1s ease-out;
 }
 
@@ -243,6 +253,7 @@ body {
     bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 1;
     animation: bounce 2s infinite;
 }
 
@@ -424,6 +435,10 @@ body {
 
     .hero-title {
         font-size: 2.5rem;
+    }
+
+    .hero-cover {
+        background-position: center top;
     }
 
     .hero-tagline {
